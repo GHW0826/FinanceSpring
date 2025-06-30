@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.finance'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':auth')
+    implementation project(':crypto')
+    implementation project(':common')
+    implementation project(':domain')
+
+    // Spring Boot 실행에 필요한 핵심 의존성
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+    useJUnitPlatform()
+}

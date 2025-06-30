@@ -1,4 +1,3 @@
-
 pluginManagement {
     plugins {
         id 'org.springframework.boot' version '3.2.0'
@@ -7,6 +6,13 @@ pluginManagement {
 }
 
 rootProject.name = 'FinanceSpring'
-include 'Auth'
-include 'Common'
-include 'App'
+include ':common'
+include ':domain'
+include ':auth'
+include ':app'
+include 'trading'
+include 'metadata'
+include 'product'
+include 'domain'
+include 'stock'
+include 'crypto'
