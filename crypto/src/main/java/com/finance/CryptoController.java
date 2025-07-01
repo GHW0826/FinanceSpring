@@ -1,5 +1,7 @@
 package com.finance;
 
+import com.finance.binance.BinancePriceRequest;
+import com.finance.binance.BinanceTickerPrice;
 import com.finance.upbit.dto.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,8 +26,11 @@ public class CryptoController {
      */
 
     private final UpbitExchange upbitExchange;
-    public CryptoController(UpbitExchange upbitExchange) {
+    private final BinanceExchange binanceExchange;
+
+    public CryptoController(UpbitExchange upbitExchange, BinanceExchange binanceExchange) {
         this.upbitExchange = upbitExchange;
+        this.binanceExchange = binanceExchange;
     }
 
     @GetMapping("/ticker")
@@ -132,5 +137,20 @@ public class CryptoController {
     @GetMapping("/years")
     public List<YearCandle> getYearCandles(@RequestBody YearCandleRequest request) {
         return upbitExchange.getYearCandles(request);
+    }
+
+
+
+    /**
+     * Binance 시세 조회 API
+     * - symbol 지정 시 해당 거래쌍 시세 1건
+     * - symbol 미지정 시 전체 시세 리스트 반환
+     *
+     * @param request symbol 포함 요청 (비어도 가능)
+     * @return 시세 리스트 (항상 List 형태)
+     */
+    @GetMapping("/binance/price")
+    public List<BinanceTickerPrice> getPrice(@RequestBody BinancePriceRequest request) {
+        return binanceExchange.getPrice(request);
     }
 }
