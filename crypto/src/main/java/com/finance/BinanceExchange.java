@@ -2,7 +2,6 @@ package com.finance;
 
 import com.finance.binance.BinancePriceRequest;
 import com.finance.binance.BinanceTickerPrice;
-import com.finance.upbit.dto.MarketInfo;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;

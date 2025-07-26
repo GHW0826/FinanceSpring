@@ -3,28 +3,13 @@ package com.finance;
 import com.finance.binance.BinancePriceRequest;
 import com.finance.binance.BinanceTickerPrice;
 import com.finance.upbit.dto.*;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/crypto")
+@RequestMapping("/trading/crypto")
 public class CryptoController {
-
-    /*
-    private final CryptoMarketService marketService;
-
-    public CryptoController(CryptoMarketService marketService) {
-        this.marketService = marketService;
-    }
-
-    @GetMapping("/ticker")
-    public CryptoAsset getTicker(@RequestParam String exchange, @RequestParam String symbol) {
-        return marketService.getTicker(exchange, symbol);
-    }
-     */
-
     private final UpbitExchange upbitExchange;
     private final BinanceExchange binanceExchange;
 
@@ -33,7 +18,7 @@ public class CryptoController {
         this.binanceExchange = binanceExchange;
     }
 
-    @GetMapping("/ticker")
+    @GetMapping("/upbit/ticker")
     public List<MarketInfo> getTicker() {
         return upbitExchange.getMarkets(false);
     }
