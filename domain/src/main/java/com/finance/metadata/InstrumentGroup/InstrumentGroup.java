@@ -1,4 +1,4 @@
-package com.finance.metadata;
+package com.finance.metadata.InstrumentGroup;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

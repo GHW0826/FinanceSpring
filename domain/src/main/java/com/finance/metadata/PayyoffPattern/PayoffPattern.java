@@ -1,4 +1,4 @@
-package com.finance.metadata;
+package com.finance.metadata.PayyoffPattern;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

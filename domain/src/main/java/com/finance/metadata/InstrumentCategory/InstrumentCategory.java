@@ -1,6 +1,7 @@
-package com.finance.metadata;
+package com.finance.metadata.InstrumentCategory;
 
 
+import com.finance.metadata.InstrumentCategoryId;
 import jakarta.persistence.*;
 import lombok.*;
 
