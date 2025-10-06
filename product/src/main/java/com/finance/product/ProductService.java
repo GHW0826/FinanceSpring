@@ -3,40 +3,34 @@ package com.finance.product;
 import com.finance.product.dto.SaveProductRequest;
 import com.finance.product.dto.SaveProductResponse;
 import com.finance.product.entity.Product;
-import com.finance.product.entity.ProductFixedIncome;
-import com.finance.product.entity.ProductSchedule;
+import com.finance.product.entity.ProductFIFWDBFD;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 @Service
 @Transactional
 public class ProductService {
+    private final ProductRepository productRepository;
     private final ProductFixedIncomeRepository fiRepository;
     private final ProductScheduleRepository productScheduleRepository;
 
-    public ProductService(ProductScheduleRepository productScheduleRepository,
+    public ProductService(ProductRepository productRepository,
+                          ProductScheduleRepository productScheduleRepository,
                           ProductFixedIncomeRepository fiRepository) {
+        this.productRepository = productRepository;
         this.productScheduleRepository = productScheduleRepository;
         this.fiRepository = fiRepository;
     }
 
     public SaveProductResponse saveFiFwdBfd(SaveProductRequest dto) {
-        ProductFixedIncome prodFi = new ProductFixedIncome(
-                null,
-                dto.getName(),
-                dto.getStatus(),
-                dto.getAssetGrp(),
-                dto.getInstGrp(),
-                dto.getPayoffPattern(),
-                dto.getDum()
-        );
-        List<ProductSchedule> productSchedules = dto.createSchedule(prodFi);
+        Product prod = mapToEntity(dto);
 
+        Product saved = productRepository.save(prod);
+
+        // List<ProductSchedule> productSchedules = dto.createSchedule(prodFi);
         // productRepository.save(prod);
-        List<ProductSchedule> savedSchedule = productScheduleRepository.saveAll(productSchedules);
-        ProductFixedIncome saved = fiRepository.save(prodFi);
+//        List<ProductSchedule> savedSchedule = productScheduleRepository.saveAll(productSchedules);
+  //      ProductFIFWDBFD saved = fiRepository.save(prodFi);
 
         return new SaveProductResponse(
                 saved.getInstrumentId(),
@@ -69,4 +63,21 @@ public class ProductService {
         return new DeleteUnderlyingBondResponse();
     }
     */
+
+    private Product mapToEntity(SaveProductRequest req) {
+        if (req instanceof SaveFiFwdBfdRequest fi) {
+            return new ProductFIFWDBFD(
+                    req.getName(),
+                    req.getStatus(),
+                    req.getAssetGrp(),
+                    req.getInstGrp(),
+                    req.getPayoffPattern(),
+                    req.getProductSect(),   // null 허용이면 그대로 전달
+                    req.getPosition(),
+                    req.getModelSect(),
+                    fi.getDum()
+            );
+        }
+        return null;
+    }
 }

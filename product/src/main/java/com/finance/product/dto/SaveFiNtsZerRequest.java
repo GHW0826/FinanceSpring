@@ -10,7 +10,7 @@ import java.util.List;
 
 @Data
 @NoArgsConstructor
-public class SaveFiFwdBfdRequest extends SaveProductRequest {
+public class SaveFiNtsZerRequest extends SaveProductRequest {
     protected double principal;
     protected double annualRate;
     protected int days;

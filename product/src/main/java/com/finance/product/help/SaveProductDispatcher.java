@@ -1,7 +1,6 @@
 package com.finance.product.help;
 
 import com.finance.product.ProductService;
-import com.finance.product.dto.SaveFiFwdBfdRequest;
 import com.finance.product.dto.SaveProductRequest;
 import com.finance.product.dto.SaveProductResponse;
 import org.springframework.stereotype.Component;

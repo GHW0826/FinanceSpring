@@ -11,13 +11,15 @@ repositories {
 
 dependencies {
     implementation project(':auth')
-    implementation project(':crypto')
     implementation project(':common')
     implementation project(':domain')
     implementation project(':market')
-    implementation project(':product')
-    implementation project(':book')
     implementation project(':underlying')
+    implementation project(':product')
+    implementation project(':booking')
+    implementation project(':risk')
+    implementation project(':pricing')
+    implementation project(':crypto')
 
     // Spring Boot 실행에 필요한 핵심 의존성
     implementation 'org.springframework.boot:spring-boot-starter-web'

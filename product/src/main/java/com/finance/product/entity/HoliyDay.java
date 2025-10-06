@@ -1,16 +1,9 @@
 package com.finance.product.entity;
 
-import com.finance.domain.product.AssetGrp;
-import com.finance.domain.product.InstGrp;
-import com.finance.domain.product.PayoffPattern;
-import com.finance.domain.product.Status;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "holiday")
