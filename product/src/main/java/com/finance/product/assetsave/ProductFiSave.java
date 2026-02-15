@@ -2,8 +2,8 @@ package com.finance.product.assetsave;
 
 // fixed income
 
-import com.finance.product.entity.Product;
-import com.finance.product.dto.SaveProductRequest;
+import com.finance.entity.product.Product;
+import com.finance.product.core.dto.SaveProductRequest;
 
 public class ProductFiSave implements IProductDetailSave {
     @Override

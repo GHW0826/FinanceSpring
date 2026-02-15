@@ -3,22 +3,18 @@ package com.finance.domain.product;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum BookStatus {
-    STANDBY("StandBy"),
-    POSITION("Position"),
-    BOOKED("Booked"),
-    CLOSED("Closed"),
-    DELETED("Deleted"),
-    CANCEL("Cancel");
+public enum ScheduleSect {
+    Interest("Interest"),
+    Maturity("Maturity");
 
     private final String code;
 
-    BookStatus(String code) { this.code = code; }
+    ScheduleSect(String code) { this.code = code; }
     public String getCode() { return code; }
 
     @JsonCreator
-    public static BookStatus fromJson(String input) {
-        for (BookStatus t : values()) {
+    public static ScheduleSect fromJson(String input) {
+        for (ScheduleSect t : values()) {
             if (t.name().equalsIgnoreCase(input) || t.code.equalsIgnoreCase(input)) {
                 return t;
             }

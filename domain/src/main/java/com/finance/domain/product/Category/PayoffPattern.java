@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum PayoffPattern {
+    ZeroCoupon("ZeroCoupon"),
     CFS("CFS"),
     CFG("CFG"),
     CFB("CFB"),

@@ -16,7 +16,7 @@ dependencies {
     implementation project(':market')
     implementation project(':underlying')
     implementation project(':product')
-    implementation project(':booking')
+    implementation project(':transaction')
     implementation project(':risk')
     implementation project(':pricing')
     implementation project(':crypto')
