@@ -6,19 +6,20 @@ pluginManagement {
 }
 
 rootProject.name = 'FinanceSpring'
+
 include ':common'
-include ':domain'
-include ':auth'
+include ':spring-modules:crawl'
+include ':spring-modules:crawl-pubsub'
+include("spring-modules:commons")
+include("spring-modules:auth")
+include ':spring-modules:security'
 include ':app'
 include 'trading'
-include 'metadata'
 include 'product'
-include 'domain'
 include 'stock'
 include 'crypto'
 include 'market'
 include 'underlying'
-include 'book'
 include 'risk'
 include 'transaction'
 include 'pricing'

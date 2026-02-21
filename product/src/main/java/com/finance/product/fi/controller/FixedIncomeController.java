@@ -1,10 +1,5 @@
 package com.finance.product.fi.controller;
 
-import com.finance.domain.product.Category.AssetGrp;
-import com.finance.domain.product.Category.InstGrp;
-import com.finance.domain.product.Category.PayoffPattern;
-import com.finance.domain.product.Status;
-import com.finance.product.core.dto.SaveProductRequest;
 import com.finance.product.core.dto.SaveProductResponse;
 import com.finance.product.fi.dto.SaveFixedIncomeRequest;
 import com.finance.product.fi.service.FixedIncomeService;

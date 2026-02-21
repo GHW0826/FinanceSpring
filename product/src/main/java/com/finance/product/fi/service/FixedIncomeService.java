@@ -1,12 +1,12 @@
 package com.finance.product.fi.service;
 
-import com.finance.entity.tools.Holiday;
-import com.finance.entity.product.ProductSchedule;
+import com.finance.common.common.entity.Holiday;
+import com.finance.common.product.entity.ProductSchedule;
 import com.finance.product.core.repository.ProductScheduleRepository;
-import com.finance.entity.product.fi.FixedIncome;
-import com.finance.entity.product.fi.FixedIncomeNoteZero;
+import com.finance.common.product.entity.fi.FixedIncome;
+import com.finance.common.product.entity.fi.FixedIncomeNoteZero;
 import com.finance.product.fi.repository.FixedIncomeRepository;
-import com.finance.entity.product.Product;
+import com.finance.common.product.entity.Product;
 import com.finance.product.core.dto.SaveProductRequest;
 import com.finance.product.core.dto.SaveProductResponse;
 import org.springframework.stereotype.Service;

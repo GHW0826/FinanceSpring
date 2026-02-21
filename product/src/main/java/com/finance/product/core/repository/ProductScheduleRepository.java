@@ -1,6 +1,6 @@
 package com.finance.product.core.repository;
 
-import com.finance.entity.product.ProductSchedule;
+import com.finance.common.product.entity.ProductSchedule;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
