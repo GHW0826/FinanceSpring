@@ -1,0 +1,20 @@
+-- CurrencyMaster 초기 데이터
+INSERT INTO currency_master (currency_code, name, description, created_at, updated_at) VALUES
+('KRW', 'Korean Won', '대한민국 원화', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('USD', 'US Dollar', '미국 달러', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('EUR', 'Euro', '유로존 공통 통화', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('JPY', 'Japanese Yen', '일본 엔화', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('CNY', 'Chinese Yuan', '중국 위안화', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('HKD', 'Hong Kong Dollar', '홍콩 달러', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('GBP', 'Pound Sterling', '영국 파운드', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('CHF', 'Swiss Franc', '스위스 프랑', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('AUD', 'Australian Dollar', '호주 달러', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('CAD', 'Canadian Dollar', '캐나다 달러', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('NZD', 'New Zealand Dollar', '뉴질랜드 달러', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('SGD', 'Singapore Dollar', '싱가포르 달러', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('INR', 'Indian Rupee', '인도 루피', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('TWD', 'New Taiwan Dollar', '대만 달러', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('THB', 'Thai Baht', '태국 바트', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('VND', 'Vietnamese Dong', '베트남 동', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('MYR', 'Malaysian Ringgit', '말레이시아 링깃', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('IDR', 'Indonesian Rupiah', '인도네시아 루피아', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
